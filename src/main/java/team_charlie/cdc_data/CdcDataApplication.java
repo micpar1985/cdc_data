@@ -17,7 +17,7 @@ public class CdcDataApplication {
 	}
 
 	@GetMapping("/hello")
-	public String sayHello(@RequestParam(value = "myName", defaultValue "Hey") String name) {
+	public String sayHello(@RequestParam(value = "myName", defaultValue = "there!") String name) {
 		this.name = name;
 		return String.format("Hello %s!", name);
 	}
