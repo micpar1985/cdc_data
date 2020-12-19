@@ -1,3 +1,6 @@
 FROM openjdk:14-jdk-alpine
-COPY build/libs/*.jar app.jar
-ENTRYPOINT ["java","/app.jar"]
+VOLUME /tmp
+EXPOSE 8080
+ARG JAR_FILE=build/libs/*.jar
+ADD ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
