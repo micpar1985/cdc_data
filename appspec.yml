@@ -1,0 +1,6 @@
+version: 0.0
+os: linux
+files:
+  - source: app.jar
+    destination: /app.jar
+hooks: {}
