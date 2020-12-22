@@ -23,7 +23,6 @@ phases:
       - echo Pushing the Docker images...
       - docker push $REPOSITORY_URI:latest
       - echo Writing image definitions file...
+      - printf '[{"name":"CDCDataCluster","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
 artifacts:
-  files:
-    - build/libs/*.jar
-    - appspec.yml
+  files: imagedefinitions.json
