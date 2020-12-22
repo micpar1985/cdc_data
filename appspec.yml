@@ -3,4 +3,8 @@ os: linux
 files:
   - source: app.jar
     destination: /app.jar
-hooks: {}
+hooks:
+  ApplicationStart:
+    - location: start.sh
+      timeout: 180
+      runas: root
