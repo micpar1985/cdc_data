@@ -1,4 +1,4 @@
-FROM openjdk-14-jdk-alpine
+FROM openjdk:14
 ARG JAR_FILE=build/libs/*.jar
 COPY ${JAR_FILE} app.jar
 EXPOSE 8080
