@@ -4,9 +4,9 @@ phases:
   install:
     runtime-versions:
       docker: 18
+      gradle: 6.7.1
   pre_build:
     commands:
-      - gradle clean install
       - echo Logging in to Amazon ECR...
       - aws --version
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
