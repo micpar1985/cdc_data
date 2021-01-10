@@ -1,4 +1,4 @@
-FROM openjdk:14-oracle
+FROM openjdk:15
 ARG JAR_FILE=build/libs/*.jar
 COPY ${JAR_FILE} app.jar
 EXPOSE 8080
