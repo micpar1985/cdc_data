@@ -4,6 +4,7 @@ phases:
   install:
     runtime-versions:
       docker: 18
+      java: openjdk-15-jdk
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
