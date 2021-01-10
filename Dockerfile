@@ -1,5 +1,4 @@
 FROM openjdk:15
-ARG JAR_FILE=build/libs/*.jar
-ADD build/libs/*.jar app.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","/app.jar"]
+ADD target/cdc-data.jar cdc-data.jar
+ENTRYPOINT ["java","-jar","/cdc-data.jar"]
