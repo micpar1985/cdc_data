@@ -1,6 +1,6 @@
 package team_charlie.cdc_data.service.impl;
 
-import com.amazonaws.services.s3.model.CannedAccessControlList;
+/*import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.DeleteObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import team_charlie.cdc_data.service.AmazonS3ClientService;
@@ -69,4 +69,4 @@ public class AmazonS3ClientServiceImpl implements AmazonS3ClientService
             logger.error("error [" + ex.getMessage() + "] occurred while removing [" + fileName + "] ");
         }
     }
-}
+}*/

@@ -1,6 +1,6 @@
 package team_charlie.cdc_data.model;
 
-import org.springframework.beans.factory.annotation.Value;
+/*import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import com.amazonaws.auth.AWSCredentialsProvider;
@@ -49,4 +49,4 @@ public class AmazonS3Config
     public String getAWSS3AudioBucket() {
         return awsS3AudioBucket;
     }
-}
+}*/

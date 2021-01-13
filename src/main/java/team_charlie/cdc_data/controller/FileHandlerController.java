@@ -1,6 +1,6 @@
 package team_charlie.cdc_data.controller;
 
-import team_charlie.cdc_data.service.AmazonS3ClientService;
+/*import team_charlie.cdc_data.service.AmazonS3ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -35,4 +35,4 @@ public class FileHandlerController {
 
         return response;
     }
-}
+}*/
