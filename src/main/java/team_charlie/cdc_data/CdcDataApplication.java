@@ -18,7 +18,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import static team_charlie.cdc_data.model.AmazonS3Config.*;
+//import static team_charlie.cdc_data.model.AmazonS3Config.*;
 
 @SpringBootApplication
 @RestController
@@ -28,7 +28,7 @@ public class CdcDataApplication {
 		SpringApplication.run(CdcDataApplication.class, args);
 	}
 
-	@GetMapping("/getcdcdata")
+	/*@GetMapping("/getcdcdata")
 	public String getData() {
 
 		final String uri = "https://data.cdc.gov/resource/vbim-akqf.json";
@@ -65,5 +65,5 @@ public class CdcDataApplication {
 		);
 
 		return ("CDC data is now refreshed!");
-	}
+	}*/
 }

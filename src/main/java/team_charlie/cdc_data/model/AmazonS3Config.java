@@ -4,7 +4,7 @@ import org.springframework.context.EnvironmentAware;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
-
+/*
 @Component
 @PropertySource("classpath:application.properties")
 public class AmazonS3Config implements EnvironmentAware
@@ -43,5 +43,5 @@ public class AmazonS3Config implements EnvironmentAware
     public static String getAwsS3Object() {
         return awsS3Object;
     }
-}
+}*/
 
