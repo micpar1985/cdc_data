@@ -22,6 +22,7 @@ dependencies {
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	implementation platform('com.amazonaws:aws-java-sdk:1.11.933')
 	implementation 'com.amazonaws:aws-java-sdk-s3:1.11.933'
+	compile group: 'com.amazonaws', name: 'aws-java-sdk-secretsmanager', version: '1.11.461'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
