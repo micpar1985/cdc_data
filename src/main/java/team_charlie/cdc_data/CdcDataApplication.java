@@ -72,7 +72,7 @@ public class CdcDataApplication {
 
 		String acctOwner = s3client.getS3AccountOwner().getDisplayName();
 
-		s3client.putObject("cdc-s3-bucket",
+		s3client.putObject("my-cdc-bucket",
 				"mlkjr.txt",
 				"/Document/mlkjr.txt");
 
