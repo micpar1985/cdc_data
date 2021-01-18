@@ -73,8 +73,8 @@ public class CdcDataApplication {
 		String acctOwner = s3client.getS3AccountOwner().getDisplayName();
 
 		s3client.putObject("cdc-s3-bucket",
-				"mlk.txt",
-				"/Document/hello.txt");
+				"mlkjr.txt",
+				"/Document/mlkjr.txt");
 
 		return ("CDC data is now refreshed!");
 	}
