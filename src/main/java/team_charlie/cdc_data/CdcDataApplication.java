@@ -65,18 +65,16 @@ public class CdcDataApplication {
 		AmazonS3 s3client = AmazonS3ClientBuilder
 				.standard()
 				.withCredentials(new DefaultAWSCredentialsProviderChain())
-				.withRegion("us-west-2")
+				.withRegion("us-east-2")
 				.build();
 
 		s3client.toString();
 
 		String acctOwner = s3client.getS3AccountOwner().getDisplayName();
 
-		/*s3client.putObject(
-				AmazonS3Config.getAwsS3Bucket(),
-				AmazonS3Config.getAwsS3Object(),
-				new File(filepath)
-		);*/
+		s3client.putObject("cdc-s3-bucket",
+				"mlk.txt",
+				"/Document/hello.txt");
 
 		return ("CDC data is now refreshed!");
 	}
