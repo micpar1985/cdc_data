@@ -64,7 +64,6 @@ public class CdcDataApplication {
 
 		AmazonS3 s3client = AmazonS3ClientBuilder
 				.standard()
-				.withCredentials(new EnvironmentVariableCredentialsProvider())
 				.withRegion("us-east-2")
 				.build();
 
