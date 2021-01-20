@@ -1,32 +1,28 @@
 package team_charlie.cdc_data;
 
-//import team_charlie.cdc_data.model.*;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.boot.SpringApplication;
 
 @SpringBootApplication
-@RestController
+@EnableScheduling
 public class CdcDataApplication {
 
     private static String filepath = "No path assigned";
 
     public static void main(String[] args) {
         SpringApplication.run(CdcDataApplication.class, args);
-        System.out.println(getData());
     }
 
-    //@GetMapping("/getcdcdata")
-    public static String getData() {
+    @Scheduled(fixedRate = 21600000)
+    public static void getData() {
 
         final String uri = "https://data.cdc.gov/resource/vbim-akqf.json";
         RestTemplate restTemplate = new RestTemplate();
@@ -53,6 +49,9 @@ public class CdcDataApplication {
                 "cdc-data-file",
                 new File(filepath));
 
-        return ("CDC data is now refreshed!");
-    }
+        System.out.println(
+                "Fixed rate task - " + System.currentTimeMillis() / 1000);
+        }
+
+
 }
