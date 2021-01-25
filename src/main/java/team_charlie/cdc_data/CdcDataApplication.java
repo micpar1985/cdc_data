@@ -3,6 +3,10 @@ package team_charlie.cdc_data;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -29,12 +33,10 @@ public class CdcDataApplication {
 
         try {
             String urlresult = restTemplate.getForObject(uri, String.class);
-
             File tmpFile = File.createTempFile("cdcdata", ".json");
             FileWriter writer = new FileWriter(tmpFile);
             writer.write(urlresult);
             writer.close();
-
             filepath = tmpFile.getAbsolutePath();
         } catch (IOException e) {
             e.printStackTrace();
@@ -49,9 +51,8 @@ public class CdcDataApplication {
                 "cdc-data-file",
                 new File(filepath));
 
-        System.out.println(
-                "Fixed rate task - " + System.currentTimeMillis() / 1000);
-        }
-
-
+        Date currentDate = new Date(System.currentTimeMillis());
+        DateFormat df = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss Z");
+        System.out.println("Fixed rate task - " + df.format(currentDate));
+    }
 }
